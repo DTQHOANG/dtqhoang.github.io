@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10 Đánh Giá 5⭐ Cây Dâu Tây – TikTok Shop</title>
+<style>
+  :root { --tk:#fe2c55; --tk2:#161823; --gold:#ffb800; --bg:#f0f0f0; --card:#fff; --green:#25d366; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Segoe UI',Arial,sans-serif; background:var(--bg); color:#333; }
+
+  header {
+    background:var(--tk2); color:white; padding:20px 36px;
+    display:flex; align-items:center; justify-content:space-between;
+    box-shadow:0 3px 12px rgba(0,0,0,.35);
+  }
+  .logo { display:flex; align-items:center; gap:10px; }
+  .logo-icon { font-size:2rem; }
+  .logo h1 { font-size:1.4rem; font-weight:800; }
+  .logo p { font-size:.82rem; opacity:.7; margin-top:2px; }
+  .hd-badge { background:var(--tk); border-radius:30px; padding:6px 16px; font-size:.82rem; font-weight:700; }
+
+  .stats { background:white; margin:20px 36px 0; border-radius:12px; padding:14px 24px; display:flex; gap:0; box-shadow:0 1px 6px rgba(0,0,0,.07); }
+  .stat { flex:1; text-align:center; border-right:1px solid #eee; padding:0 12px; }
+  .stat:last-child { border-right:none; }
+  .stat .n { font-size:1.9rem; font-weight:800; color:var(--tk); line-height:1; }
+  .stat .l { font-size:.75rem; color:#aaa; margin-top:3px; }
+
+  .notice { margin:12px 36px 0; background:#fff3f3; border-left:4px solid var(--tk); padding:10px 16px; border-radius:0 8px 8px 0; font-size:.82rem; color:#c0392b; }
+
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(500px,1fr)); gap:22px; padding:22px 36px 50px; }
+
+  .card { background:var(--card); border-radius:14px; box-shadow:0 2px 10px rgba(0,0,0,.08); overflow:hidden; transition:transform .18s,box-shadow .18s; }
+  .card:hover { transform:translateY(-3px); box-shadow:0 8px 28px rgba(0,0,0,.13); }
+
+  .card-top { background:linear-gradient(135deg,#fff5f5,#fff); padding:14px 18px 12px; border-bottom:1px solid #f5f5f5; display:flex; align-items:flex-start; justify-content:space-between; }
+  .badge { width:30px; height:30px; background:var(--tk); color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:.82rem; flex-shrink:0; }
+  .user-info { flex:1; margin:0 12px; }
+  .uname { font-weight:700; font-size:.95rem; }
+  .umeta { font-size:.75rem; color:#aaa; margin-top:2px; }
+  .stars { color:var(--gold); font-size:1.15rem; letter-spacing:1px; }
+  .type-badge { font-size:.68rem; padding:2px 7px; border-radius:10px; font-weight:700; display:inline-block; margin-top:3px; }
+  .type-av { background:#e8f5e9; color:#2e7d32; }
+  .type-a { background:#e3f2fd; color:#1565c0; }
+
+  .card-body { padding:16px 18px; }
+  .product-tag { display:inline-flex; align-items:center; gap:5px; background:#fff0f0; color:var(--tk); font-size:.75rem; font-weight:700; padding:4px 10px; border-radius:20px; margin-bottom:8px; max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .order-chip { font-size:.7rem; color:#aaa; background:#f5f5f5; padding:2px 8px; border-radius:4px; font-family:monospace; display:inline-block; margin-bottom:10px; }
+  .comment { font-size:.88rem; line-height:1.7; color:#444; margin-bottom:14px; white-space:pre-wrap; }
+
+  /* Media grid */
+  .media-wrap { display:grid; gap:5px; margin-bottom:14px; }
+  .media-wrap.n1 { grid-template-columns:1fr; }
+  .media-wrap.n2 { grid-template-columns:1fr 1fr; }
+  .media-wrap.n3 { grid-template-columns:1fr 1fr 1fr; }
+  .media-wrap.n4 { grid-template-columns:1fr 1fr; }
+  .media-wrap.n5 { grid-template-columns:1fr 1fr 1fr; }
+  .media-wrap.n6 { grid-template-columns:1fr 1fr 1fr; }
+  .media-wrap.n7 { grid-template-columns:repeat(4,1fr); }
+
+  .thumb { aspect-ratio:1; overflow:hidden; border-radius:7px; background:#f0f0f0; cursor:pointer; position:relative; }
+  .thumb img { width:100%; height:100%; object-fit:cover; transition:transform .22s; display:block; }
+  .thumb:hover img { transform:scale(1.08); }
+
+  /* Video cell */
+  .vid-cell { border-radius:7px; overflow:hidden; background:#000; position:relative; }
+  .vid-embed { width:100%; aspect-ratio:9/16; border:none; display:block; }
+  .vid-label { position:absolute; top:6px; left:6px; background:var(--tk); color:white; font-size:.65rem; font-weight:700; padding:2px 6px; border-radius:10px; z-index:1; }
+
+  .reply-box { background:#fafafa; border-left:3px solid var(--tk); padding:10px 14px; border-radius:0 8px 8px 0; font-size:.82rem; line-height:1.55; color:#555; }
+  .reply-lbl { font-size:.72rem; font-weight:800; color:var(--tk); margin-bottom:4px; }
+
+  /* Lightbox */
+  #lb { display:none; position:fixed; inset:0; background:rgba(0,0,0,.92); z-index:9999; flex-direction:column; align-items:center; justify-content:center; }
+  #lb.on { display:flex; }
+  #lb img { max-width:92vw; max-height:84vh; border-radius:10px; object-fit:contain; }
+  #lb-close { position:absolute; top:18px; right:24px; color:white; font-size:2.2rem; cursor:pointer; opacity:.8; line-height:1; }
+  #lb-close:hover { opacity:1; }
+  #lb-info { color:rgba(255,255,255,.6); font-size:.85rem; margin-top:10px; }
+  .lb-btns { display:flex; gap:10px; margin-top:12px; }
+  .lb-btns button { background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.3); color:white; padding:7px 22px; border-radius:30px; cursor:pointer; font-size:.88rem; }
+  .lb-btns button:hover { background:rgba(255,255,255,.3); }
+
+  @media(max-width:600px) {
+    header { padding:14px 18px; flex-direction:column; gap:8px; }
+    .stats { margin:14px 16px 0; }
+    .notice { margin:10px 16px 0; }
+    .grid { padding:16px 16px 40px; grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-icon">🎵</div>
+    <div>
+      <h1>10 Đánh Giá 5⭐ Cây Dâu Tây – TikTok Shop</h1>
+      <p>Shop: Vườn Sau Nhà &nbsp;·&nbsp; Lấy ngày 05/06/2026 &nbsp;·&nbsp; 3 review có VIDEO thực tế</p>
+    </div>
+  </div>
+  <div class="hd-badge">⭐ 5 SAO · DÂU TÂY</div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">114</div><div class="l">Tổng review TikTok</div></div>
+  <div class="stat"><div class="n">10</div><div class="l">Review được chọn</div></div>
+  <div class="stat"><div class="n">3</div><div class="l">Có video thực tế</div></div>
+  <div class="stat"><div class="n" id="totalMedia">—</div><div class="l">Tổng ảnh + video</div></div>
+</div>
+
+<div class="notice">
+  ⚠️ <strong>Ảnh TikTok:</strong> CDN URL cần token xác thực, có thể hết hạn sau vài giờ. Nếu ảnh không hiển thị, mở TikTok Shop và xem trực tiếp theo mã đơn hàng.
+</div>
+
+<div class="grid" id="grid"></div>
+
+<!-- Lightbox -->
+<div id="lb">
+  <span id="lb-close" onclick="closeLb()">✕</span>
+  <img id="lb-img" src="" alt="">
+  <div id="lb-info"></div>
+  <div class="lb-btns"><button onclick="lbNav(-1)">← Trước</button><button onclick="lbNav(1)">Sau →</button></div>
+</div>
+
+<script>
+// TikTok CDN image URL builder
+function imgUrl(uri) {
+  if (!uri) return '';
+  const base = uri.startsWith('tos-alisg')
+    ? 'https://p16-sign-sg.tiktokcdn.com/'
+    : 'https://p16-common-sign.tiktokcdn.com/';
+  // Extract the CDN suffix from the URI prefix (e.g. tos-maliva-i-dx0w9n1ysr-us → dx0w9n1ysr-us)
+  const parts = uri.split('/')[0].split('-');
+  const cdnId = parts.slice(3).join('-');
+  return base + uri + `~tplv-${cdnId}-resize-jpeg_720_720.webp`;
+}
+
+// TikTok video embed
+function vidEmbed(vidId) {
+  return `<div class="vid-cell">
+    <div class="vid-label">▶ VIDEO</div>
+    <iframe class="vid-embed" src="https://www.tiktok.com/player/v1/${vidId}?music_info=0&description=0&loop=0&autoplay=0" allowfullscreen allow="encrypted-media"></iframe>
+  </div>`;
+}
+
+const reviews = [
+  { stt:1, user:"Tuz 🐼", date:"15/03/2025", type:"ảnh+video", order_id:"580052897361725567",
+    product:"(Mua 10 tặng 2) Cây dâu tây cấy mô con chọn nhiều giống", sku:"10 cây, Nhật Hana",
+    comment:"Trãi nghiệm 1 tuần mới lên đánh giá, cây khoẻ, đóng gói kỉ càng, cây hơi nhỏ so vs tưởng tượng\nNhưng trồng vẩn ok, đặt ngày 6 ngày 8 nhận ( cây ổn)", reply:null,
+    imgUris:["tos-maliva-i-dx0w9n1ysr-us/d3aa8fd095524968856e25981b3c8457","tos-maliva-i-dx0w9n1ysr-us/a1ad9d1a4fba485ab722c7746dee1dc8"],
+    vidIds:["v098c7g40002cvahssvog65n66rokt5g"] },
+
+  { stt:2, user:"Thảo nhi", date:"06/02/2026", type:"ảnh+video", order_id:"582250636519703694",
+    product:"(Tặng kích rễ) Combo 6-10 cây dâu tây con cấy mô nhiều rễ", sku:"6 cây",
+    comment:"Cây khoẻ đẹp được tặng kích dễ", reply:null,
+    imgUris:["tos-alisg-i-aphluv4xwc-sg/07abf3cb42f34ee39e887f3b4417664d"],
+    vidIds:["v104acg5000cd62lhb7og65p9qlb9cs0"] },
+
+  { stt:3, user:"huonghoa267", date:"18/02/2025", type:"ảnh+video", order_id:"579973930623928935",
+    product:"Cây dâu tây cấy mô con chọn nhiều giống", sku:null,
+    comment:"Mấy cây mà yếu yếu là của tuiii xin của bạn còn mấy cây khỏe re là tui mua nha,Shop tư vấn siêu nhiệt tình luonn ạ dễ thương cực,tui ở miền tây mà giao về tươi khoẻ re luôn", reply:null,
+    imgUris:["tos-maliva-i-dx0w9n1ysr-us/ef23c4c870fb445a9e1f63c3ab30a59c"],
+    vidIds:["v098c7g40002cuq92cnog65mfk247ff0"] },
+
+  { stt:4, user:"x*****d", date:"13/05/2026", type:"ảnh", order_id:"583695306045621983",
+    product:"Combo 6-10 cây dâu tây con cấy mô nhiều rễ", sku:null,
+    comment:"3 ảnh đầu là ngày 13.5 , 3 ảnh sau là hôm mình mới trồng ngày 30.4, sau 13 ngày thì cây phát triển tốt, shop còn tặng mình thêm kích rễ tư vấn nhiệt tình", reply:null,
+    imgUris:["tos-alisg-i-aphluv4xwc-sg/71a8f6b7dab34202a46229c0655348b6","tos-alisg-i-aphluv4xwc-sg/8e32d883470246da97f32364414e5840","tos-alisg-i-aphluv4xwc-sg/5657c85ae58c4d63b4c97c06da667c28","tos-alisg-i-aphluv4xwc-sg/3708f536c6f546ac96370d586a385855","tos-alisg-i-aphluv4xwc-sg/f9a34155ad2f4da99c0331ef480a70bf","tos-alisg-i-aphluv4xwc-sg/d990ad92c16440c1b80b2f5a1d9966fe"],
+    vidIds:[] },
+
+  { stt:5, user:"Thành Phát Nguyễn", date:"04/05/2026", type:"ảnh", order_id:"583536146109400481",
+    product:"Combo 6-10 cây dâu tây con cấy mô nhiều rễ", sku:null,
+    comment:"Cây khá khoẻ, khả năng sinh trưởng tốt, ko nấm bệnh", reply:null,
+    imgUris:["tos-alisg-i-aphluv4xwc-sg/09be804166534567845900f8b902a0ef","tos-alisg-i-aphluv4xwc-sg/b3e337224aef4202a6344a5dffd08031","tos-alisg-i-aphluv4xwc-sg/6d0114af243f4004adcc7b4ade8164bf","tos-alisg-i-aphluv4xwc-sg/17e3268bef1444af9157067943ed83bb","tos-alisg-i-aphluv4xwc-sg/21cebc2807084dcd8c1f4e9f649cd9d8","tos-alisg-i-aphluv4xwc-sg/d44b8be1f9bb4aefafc22a3effaa9101"],
+    vidIds:[] },
+
+  { stt:6, user:"Thành Phát Nguyễn", date:"04/05/2026", type:"ảnh", order_id:"583481758773183905",
+    product:"Combo 6-10 cây dâu tây con cấy mô nhiều rễ", sku:null,
+    comment:"Cây khá khoẻ, thích nghi cao, khả năng sống tốt", reply:null,
+    imgUris:["tos-alisg-i-aphluv4xwc-sg/a2e1bd659f2b431f9b4716d9bc9085dc","tos-alisg-i-aphluv4xwc-sg/435fb29f93d146178be88b03ceb113f7","tos-alisg-i-aphluv4xwc-sg/0ef15060363e4dab95e1ab753739c3fe","tos-alisg-i-aphluv4xwc-sg/e99298b5cdd74a7ab35469e6353d0cba","tos-alisg-i-aphluv4xwc-sg/594f3b41215244628a769d51a7d54cd3"],
+    vidIds:[] },
+
+  { stt:7, user:"Khanh.", date:"04/03/2026", type:"ảnh", order_id:"582835126853928703",
+    product:"(Tặng kích rễ) Combo 6-10 cây dâu tây con cấy mô nhiều rễ", sku:null,
+    comment:"Cây tốt giao tới vẫn còn xanh, có cây oishi bị rũ xuống z r nó có tươi lại kh shop, cây mới giao nên mình để ở chỗ mát kín nắng, cây mà có hoa thì mn nên lặt đi ha", reply:null,
+    imgUris:["tos-alisg-i-aphluv4xwc-sg/0456042dc94341c9952a2225df180238","tos-alisg-i-aphluv4xwc-sg/57ef3e02fda448dbb60077e957d42b87","tos-alisg-i-aphluv4xwc-sg/552ff5d4983d4a13a14381cbeaf4ad56","tos-alisg-i-aphluv4xwc-sg/7f8ffa97785c4d1197024f8c15025780"],
+    vidIds:[] },
+
+  { stt:8, user:"🎋💮 Hot Boy Cat 💮🎋", date:"29/06/2024", type:"ảnh", order_id:"578990059358423046",
+    product:"(Mua 10 tặng 2) Cây Dâu Tây Cấy Mô Được Chọn Nhiều Giống", sku:null,
+    comment:"Mình mua lần hai bên shop và rất hài lòng với giá cả và cây rất khoẻ sống 99% . Mọi người ưu tiên ủng hộ shop nhiều nha.", reply:null,
+    imgUris:["tos-maliva-i-dx0w9n1ysr-us/6e1e1a9d19934fd18025ebc5cc2dcb44","tos-maliva-i-dx0w9n1ysr-us/3cf254b35bdb4bd4805f1d80a42e2cd1","tos-maliva-i-dx0w9n1ysr-us/e0fce0c6959849259b97e244097a8e3d","tos-maliva-i-dx0w9n1ysr-us/7d5a93724c734234ae578c50bd342571"],
+    vidIds:[] },
+
+  { stt:9, user:"Nhân mã t12", date:"22/03/2026", type:"ảnh", order_id:null,
+    product:"Combo 6-10 cây dâu tây con cấy mô nhiều rễ", sku:null,
+    comment:"Cây ship 4 ngày vẫn còn tươi roi rói, rễ nhiều nữa chứ , tặng thêm dung dịch kích rễ nx í . Shop trả lời tin nhắn dễ thương nx chứ iu shoppp. Ảnh sau là mình trồng cỡ tuần nhaa mí bạn", reply:null,
+    imgUris:["tos-alisg-i-aphluv4xwc-sg/e400b83addd2452992217a968742a704","tos-alisg-i-aphluv4xwc-sg/3b2a027efcb045e19d0726a382c572fe"],
+    vidIds:[] },
+
+  { stt:10, user:"Sứa", date:"08/02/2026", type:"ảnh", order_id:null,
+    product:"(Tặng kích rễ) Combo 6-10 cây dâu tây con cấy mô nhiều rễ", sku:null,
+    comment:"tui trồng được tròn 20 ngày, cây tui siêu khoẻ luôn, giờ đang mọc lá mới quá trời, có một cây héo, tui nhắn thì shop chủ động hoàn tiền cây đó, nhắn tin shop cũng trả lời siêu nhanh, nói chung là đáng mua nha", reply:null,
+    imgUris:["tos-alisg-i-aphluv4xwc-sg/301d6e96a6b243608ebe5396b988b158","tos-alisg-i-aphluv4xwc-sg/6051bc0ce0fc4b3a8038c964aeb48065"],
+    vidIds:[] }
+];
+
+// Lightbox
+let lbImgs=[], lbIdx=0;
+function openLb(imgs,i){lbImgs=imgs;lbIdx=i;showLb();}
+function showLb(){document.getElementById('lb-img').src=imgUrl(lbImgs[lbIdx]);document.getElementById('lb-info').textContent=`${lbIdx+1} / ${lbImgs.length}`;document.getElementById('lb').classList.add('on');}
+function closeLb(){document.getElementById('lb').classList.remove('on');}
+function lbNav(d){lbIdx=(lbIdx+d+lbImgs.length)%lbImgs.length;showLb();}
+document.getElementById('lb').addEventListener('click',e=>{if(e.target.id==='lb')closeLb();});
+document.addEventListener('keydown',e=>{if(!document.getElementById('lb').classList.contains('on'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')lbNav(-1);if(e.key==='ArrowRight')lbNav(1);});
+
+let totalMedia=0;
+const grid=document.getElementById('grid');
+
+reviews.forEach(r=>{
+  const mediaCount=r.imgUris.length+r.vidIds.length;
+  totalMedia+=mediaCount;
+  const nClass=Math.min(mediaCount,6);
+
+  const imgHtml=r.imgUris.map((uri,i)=>`
+    <div class="thumb" onclick="openLb(${JSON.stringify(r.imgUris)},${i})">
+      <img src="${imgUrl(uri)}" loading="lazy" alt="ảnh ${i+1}"
+           onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\\'display:flex;align-items:center;justify-content:center;height:100%;font-size:.7rem;color:#aaa;padding:4px;text-align:center;\\'>Ảnh hết hạn</div>'">
+    </div>`).join('');
+
+  const vidHtml=r.vidIds.map(id=>vidEmbed(id)).join('');
+
+  const replyHtml=r.reply?`<div class="reply-box"><div class="reply-lbl">💬 Shop phản hồi</div>${r.reply}</div>`:'';
+
+  grid.innerHTML+=`
+    <div class="card">
+      <div class="card-top">
+        <div class="badge">${r.stt}</div>
+        <div class="user-info">
+          <div class="uname">👤 ${r.user}</div>
+          <div class="umeta">${r.date} · ${r.imgUris.length} ảnh${r.vidIds.length?` · ${r.vidIds.length} video`:''}</div>
+          <span class="type-badge ${r.type==='ảnh+video'?'type-av':'type-a'}">${r.type==='ảnh+video'?'🎥 Có Video':'📷 Có Ảnh'}</span>
+        </div>
+        <div class="stars">★★★★★</div>
+      </div>
+      <div class="card-body">
+        <div class="product-tag">🍓 ${r.product}</div><br>
+        ${r.order_id?`<span class="order-chip">Đơn: ${r.order_id}</span>`:''}
+        <p class="comment">${r.comment}</p>
+        <div class="media-wrap n${nClass}">${imgHtml}${vidHtml}</div>
+        ${replyHtml}
+      </div>
+    </div>`;
+});
+document.getElementById('totalMedia').textContent=totalMedia;
+</script>
+</body>
+</html>

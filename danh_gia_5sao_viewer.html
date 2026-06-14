@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đánh Giá 5 Sao – Vườn Sau Nhà</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', sans-serif; background: #f5f5f5; color: #333; }
+  header {
+    background: #ee4d2d; color: white; padding: 18px 32px;
+    display: flex; align-items: center; gap: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.2);
+  }
+  header h1 { font-size: 1.3rem; font-weight: 700; }
+  header span { font-size: .9rem; opacity: .85; }
+  .summary {
+    background: white; margin: 20px 32px 0; padding: 16px 20px;
+    border-radius: 10px; display: flex; gap: 32px; flex-wrap: wrap;
+    box-shadow: 0 1px 4px rgba(0,0,0,.08);
+  }
+  .summary-item { text-align: center; }
+  .summary-item .num { font-size: 1.8rem; font-weight: 700; color: #ee4d2d; }
+  .summary-item .label { font-size: .8rem; color: #888; margin-top: 2px; }
+  .grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 20px; padding: 20px 32px 40px;
+  }
+  .card {
+    background: white; border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08); overflow: hidden;
+    transition: transform .15s, box-shadow .15s;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.12); }
+  .card-header {
+    padding: 14px 16px 10px; border-bottom: 1px solid #f0f0f0;
+    display: flex; justify-content: space-between; align-items: flex-start;
+  }
+  .user-info { display: flex; flex-direction: column; gap: 3px; }
+  .username { font-weight: 700; font-size: .95rem; color: #333; }
+  .date { font-size: .78rem; color: #aaa; }
+  .stars { color: #ffb800; font-size: 1.1rem; letter-spacing: 1px; }
+  .stt-badge {
+    background: #ee4d2d; color: white; border-radius: 50%;
+    width: 26px; height: 26px; display: flex; align-items: center;
+    justify-content: center; font-size: .78rem; font-weight: 700; flex-shrink: 0;
+  }
+  .card-body { padding: 14px 16px; }
+  .product-name {
+    font-size: .82rem; color: #ee4d2d; font-weight: 600; margin-bottom: 8px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .comment { font-size: .88rem; line-height: 1.6; color: #444; margin-bottom: 12px; white-space: pre-wrap; }
+  .images-grid {
+    display: grid; gap: 4px; margin-bottom: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+  .img-wrap {
+    aspect-ratio: 1; overflow: hidden; border-radius: 6px;
+    cursor: pointer; background: #f0f0f0;
+  }
+  .img-wrap img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform .2s;
+  }
+  .img-wrap:hover img { transform: scale(1.08); }
+  .reply-box {
+    background: #fff8f0; border-left: 3px solid #ee4d2d;
+    padding: 8px 12px; border-radius: 0 6px 6px 0;
+    font-size: .82rem; color: #555; line-height: 1.5;
+  }
+  .reply-label { font-size: .75rem; font-weight: 700; color: #ee4d2d; margin-bottom: 3px; }
+  .order-chip {
+    display: inline-block; background: #f5f5f5; color: #888;
+    font-size: .72rem; padding: 2px 8px; border-radius: 4px;
+    margin-bottom: 8px; font-family: monospace;
+  }
+  .no-video-note {
+    font-size: .75rem; color: #bbb; margin: 0 32px 0;
+    padding: 8px 0; text-align: center;
+  }
+
+  /* Lightbox */
+  #lightbox {
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,.88);
+    z-index: 999; align-items: center; justify-content: center; flex-direction: column;
+  }
+  #lightbox.open { display: flex; }
+  #lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 8px; }
+  #lb-close {
+    position: absolute; top: 16px; right: 24px; color: white;
+    font-size: 2rem; cursor: pointer; line-height: 1;
+  }
+  #lb-nav {
+    position: absolute; bottom: 20px; display: flex; gap: 8px;
+  }
+  #lb-nav button {
+    background: rgba(255,255,255,.2); border: none; color: white;
+    padding: 6px 18px; border-radius: 20px; cursor: pointer; font-size: .9rem;
+  }
+  #lb-nav button:hover { background: rgba(255,255,255,.35); }
+  #lb-caption { color: rgba(255,255,255,.7); font-size: .85rem; margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>⭐ Đánh Giá 5 Sao – Vườn Sau Nhà</h1>
+    <span>vuonsaunha3126 · Shopee · Lấy ngày 05/06/2026</span>
+  </div>
+</header>
+
+<div class="summary">
+  <div class="summary-item"><div class="num">10</div><div class="label">Review được chọn</div></div>
+  <div class="summary-item"><div class="num">621</div><div class="label">Tổng 5 sao</div></div>
+  <div class="summary-item"><div class="num" id="totalImgs">0</div><div class="label">Tổng hình ảnh</div></div>
+  <div class="summary-item"><div class="num">5⭐</div><div class="label">Tất cả đều 5 sao</div></div>
+</div>
+
+<p class="no-video-note" style="margin-top:10px;">
+  ⚠️ Shopee seller portal API không expose URL video. Shop có video review nhưng chưa lấy được qua API này.
+</p>
+
+<div class="grid" id="grid"></div>
+
+<div id="lightbox">
+  <span id="lb-close">✕</span>
+  <img id="lb-img" src="" alt="">
+  <div id="lb-caption"></div>
+  <div id="lb-nav">
+    <button onclick="lbNav(-1)">← Trước</button>
+    <button onclick="lbNav(1)">Sau →</button>
+  </div>
+</div>
+
+<script>
+const reviews = [
+  {
+    stt:1, user:"nhuquynh120606hl", date:"07:58 11/01/2026", order:"26010574W10XBT",
+    product:"Phân Bón Hữu Cơ Cho Cây Ăn Trái & Rau Dịch Trùn Quế Chính Hãng Hiryo",
+    comment:"Cây sau 5 ngày vận chuyển bị héo lá , chắc dưỡng vài ngày là tươi lại.",
+    reply:"Cây trong bóng tối lâu nó vậy đó bạn, bạn cho ra ánh sáng là cây phục hồi trở lại",
+    imgs:["vn-11134103-820l4-mjc1ovq3rf2a93","vn-11134103-820l4-mjc1ovpxoah194","vn-11134103-820l4-mjc1ovqju51ffd","vn-11134103-820l4-mjc1ovpn98uf12","vn-11134103-820l4-mjc1ovpxmvwl1d"]
+  },
+  {
+    stt:2, user:"u3uywxthxs", date:"19:59 08/04/2025", order:"2503313MUUU2FF",
+    product:"(Mua 10 tặng 2) Cây dâu tây cấy mô con chọn nhiều giống",
+    comment:"Có mấy cây bị hư và chết nhưng shop bù lại cho mik ht luon mik thấy cây sky là khoẻ nhất nên mua giống sky nha mn shop lm việc rất chuyên nghiệp và nhiệt tình luôn á",
+    reply:"Cảm ơn bạn, vì thời gian vận chuyển đơn cửa bạn là 8 ngày làm cây ko như cam kết của shop nên shop bù lại cho bạn hết 12 cây.",
+    imgs:["vn-11134103-7ra0g-m8bz234vppc232","vn-11134103-7ra0g-m8bz235frp8idc","vn-11134103-7ra0g-m8bz2355papuf6","vn-11134103-7ra0g-m8bz235fqaf896","vn-11134103-7ra0g-m8bz235fovus6d"]
+  },
+  {
+    stt:3, user:"kh3of6v_q2", date:"10:47 07/04/2025", order:"250329TY67DCS8",
+    product:"(Mua 10 tặng 2) Cây dâu tây cấy mô con chọn nhiều giống",
+    comment:"Chất lượng sản phẩm:tốt\n\nCây sau 5 ngày phát triển rất tốt rễ nhiều mà lá lại ít có 2 cây bị gãy ngọn\nTheo dõi shop từ tik qua fb rất uy tín",
+    reply:"Cảm ơn bạn!!!",
+    imgs:["vn-11134103-7ra0g-m89zuns79gnb31","vn-11134103-7ra0g-m89zuns7av7rb4","vn-11134103-7ra0g-m89zuns7c9s716","vn-11134103-7ra0g-m89zuns7docne4","vn-11134103-7ra0g-m89zuns7f2x340"]
+  },
+  {
+    stt:4, user:"caxggoswre", date:"21:14 27/08/2024", order:"2408232VNKCTH2",
+    product:"Combo Cây Dâu Tây Cấy Mô Chịu Nhiệt ĐƯỢC CHỌN NHIỀU GIỐNG",
+    comment:"Chất lượng sản phẩm:tốt\n\nTốt",
+    reply:null,
+    imgs:["vn-11134103-7r98o-lzgc11x75tu51f","vn-11134103-7r98o-lzgc11x7la31d2","vn-11134103-7r98o-lzgc11x7mowxc2","vn-11134103-7r98o-lzgc11x778o1d5","vn-11134103-7r98o-lzgc11x78n8hce"]
+  },
+  {
+    stt:5, user:"nguyenthuy2812", date:"16:52 18/01/2024", order:"240115VH94RTRU",
+    product:"Combo Cây Dâu Tây Cấy Mô Chịu Nhiệt ĐƯỢC CHỌN NHIỀU GIỐNG",
+    comment:"Chất lượng sản phẩm:tốt\n\nĐã mua nhiều lần nhưng lần này cây hơi bé, mọi người ai chưa trồng dâu cấy mô lần nào thì nên cân nhắc tại vì cây khá bé á, nhưng đc cái đa dạng giống để lựa chọn với cây mau phát hơn ngó á. Nói tóm lại tốt, nên mua",
+    reply:null,
+    imgs:["vn-11134103-7r98o-lqn7vkploz4idb","vn-11134103-7r98o-lqn7vkplozef6c","vn-11134103-7r98o-lqn7vkpbpdqq97","vn-11134103-7r98o-lqn7vkpmjvma26","vn-11134103-7r98o-lqn7vkpm4fdeea"]
+  },
+  {
+    stt:6, user:"tnphtnguyn166", date:"17:41 09/01/2024", order:"2401054C6UR6V3",
+    product:"Combo Cây Dâu Tây Cấy Mô Chịu Nhiệt ĐƯỢC CHỌN NHIỀU GIỐNG",
+    comment:"Chất lượng sản phẩm:cây khỏe đẹp",
+    reply:null,
+    imgs:["vn-11134103-7r98o-lqaf8egsh8eq76","vn-11134103-7r98o-lqaf8egij1vbf1","vn-11134103-7r98o-lqaf8egihn0y6e","vn-11134103-7r98o-lqaf8ehcgf6aab","vn-11134103-7r98o-lqaf8eh2gtsi56"]
+  },
+  {
+    stt:7, user:"ngocanh223.___", date:"19:00 22/09/2023", order:"230919R74TSKJN",
+    product:"(Mua 10 tặng 2) Combo Cây Dâu Tây MỸ ALBION Cấy Mô Chịu Nhiệt Được Chọn Nhiều Giống",
+    comment:"Cây đẹp lắm .được shop cho thêm 1 cây\nShop 100đ :3",
+    reply:null,
+    imgs:["vn-11134103-7r98o-llyxclix3dun51","vn-11134103-7r98o-llyxdfariva796","vn-11134103-7r98o-llyxddfm94nz8b","vn-11134103-7r98o-llyxco7h631b30","vn-11134103-7r98o-llyxckoyb8incf"]
+  },
+  {
+    stt:8, user:"thienthu0410", date:"00:51 03/07/2023", order:"230605JV4NX37B",
+    product:"Phân Bón Hữu Cơ Cho Cây Ăn Trái & Rau Dịch Trùn Quế Chính Hãng Hiryo",
+    comment:"Hình ảnh và video chỉ mang tính chất nhận xu thôi ạ......mmmmm",
+    reply:null,
+    imgs:["vn-11134103-7qukw-liq89cfbg4wib2","vn-11134103-7qukw-liq8k5oxeuoi54","vn-11134103-7qukw-liq89cfbg4cs08","vn-11134103-7qukw-liq8k5ntgglo52","vn-11134103-7qukw-liq8k5o3g2j6a9"]
+  },
+  {
+    stt:9, user:"xunmai348", date:"12:21 01/07/2023", order:"230626DRDTC954",
+    product:"Combo Cây Dâu Tây Cấy Mô Chịu Nhiệt ĐƯỢC CHỌN NHIỀU GIỐNG",
+    comment:"Chất lượng sản phẩm:Tốt.\n\nMình mua hàng bên shop này nhiều lần rồi. Shop uy tín và chất lượng lắm. Hàng giao cũng nhanh . Shop rất là nhiệt tình mọi người nên ủng hộ shop nhé. Cây khỏe và đẹp lắm. Nói chung là cho shop 5⭐",
+    reply:"Cảm ơn bạn nhiều 🥰. Cây không được tiếp xúc với ánh sáng nhiều khi vận chuyển, bạn cho cây ra chỗ ánh sáng nha😉",
+    imgs:["vn-11134103-7qukw-lio29ae0318s7b","vn-11134103-7qukw-lio29ae0ihho18","vn-11134103-7qukw-lio29aekhosy59","vn-11134103-7qukw-lio29adq3fv075","vn-11134103-7qukw-lio29aek28k228"]
+  },
+  {
+    stt:10, user:"ytu9rwmkaz", date:"12:01 12/06/2025", order:"2506081J15CGU6",
+    product:"Phân Bón Hữu Cơ Cho Cây Ăn Trái & Rau Dịch Trùn Quế Chính Hãng Hiryo",
+    comment:"Chất lượng sản phẩm:tốt\n\nCây dâu khỏe,khá nhiều rễ,giao hàng nhanh đóng gói kĩ,shop dễ thương,rep tin nhắn rất nhanh.Nói chung là tốt nha nên mua",
+    reply:null,
+    imgs:["vn-11134103-7ras8-maw9u3krn9av28","vn-11134103-7ras8-maw9u3kr97tka2","vn-11134103-7ras8-maw9u3nj3r2w01","vn-11134103-7ras8-maw9u3kr7t1z40"]
+  }
+];
+
+const CDN = 'https://cf.shopee.vn/file/';
+let lbImages = [], lbIdx = 0;
+
+function imgUrl(id) { return CDN + id; }
+
+function openLightbox(imgs, idx) {
+  lbImages = imgs; lbIdx = idx;
+  document.getElementById('lb-img').src = imgUrl(imgs[idx]);
+  document.getElementById('lb-caption').textContent = `${idx+1} / ${imgs.length}`;
+  document.getElementById('lightbox').classList.add('open');
+}
+
+function lbNav(dir) {
+  lbIdx = (lbIdx + dir + lbImages.length) % lbImages.length;
+  document.getElementById('lb-img').src = imgUrl(lbImages[lbIdx]);
+  document.getElementById('lb-caption').textContent = `${lbIdx+1} / ${lbImages.length}`;
+}
+
+document.getElementById('lb-close').onclick = () => document.getElementById('lightbox').classList.remove('open');
+document.getElementById('lightbox').addEventListener('click', e => { if(e.target.id==='lightbox') document.getElementById('lightbox').classList.remove('open'); });
+document.addEventListener('keydown', e => { if(e.key==='Escape') document.getElementById('lightbox').classList.remove('open'); if(e.key==='ArrowLeft') lbNav(-1); if(e.key==='ArrowRight') lbNav(1); });
+
+let totalImgs = 0;
+const grid = document.getElementById('grid');
+
+reviews.forEach(r => {
+  totalImgs += r.imgs.length;
+  const imgGrid = r.imgs.map((id,i) => `
+    <div class="img-wrap" onclick="openLightbox(${JSON.stringify(r.imgs)},${i})">
+      <img src="${imgUrl(id)}" alt="Ảnh ${i+1}" loading="lazy">
+    </div>`).join('');
+
+  const replyHtml = r.reply ? `
+    <div class="reply-box">
+      <div class="reply-label">💬 Phản hồi của Shop</div>
+      ${r.reply}
+    </div>` : '';
+
+  grid.innerHTML += `
+    <div class="card">
+      <div class="card-header">
+        <div class="user-info">
+          <span class="username">👤 ${r.user}</span>
+          <span class="date">${r.date}</span>
+          <span class="stars">★★★★★</span>
+        </div>
+        <div class="stt-badge">${r.stt}</div>
+      </div>
+      <div class="card-body">
+        <div class="product-name">🛍️ ${r.product}</div>
+        <span class="order-chip">Đơn: ${r.order}</span>
+        <p class="comment">${r.comment}</p>
+        <div class="images-grid">${imgGrid}</div>
+        ${replyHtml}
+      </div>
+    </div>`;
+});
+
+document.getElementById('totalImgs').textContent = totalImgs;
+</script>
+</body>
+</html>
