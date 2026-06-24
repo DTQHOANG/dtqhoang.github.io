@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Đào Trần Quốc Hoàng · Video Editor — Vườn Sau Nhà</title>
+<meta name="description" content="Video Editor portfolio — Đào Trần Quốc Hoàng. TikTok channel Vườn Sau Nhà: 75K+ followers, 2M+ likes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --berry:#E23A52; --berry-dark:#9E2638; --berry-deep:#6E1B29;
+    --leaf:#2E9E5B; --leaf-dark:#1F7A45; --gold:#F4A93B;
+    --cream:#FFF7F3; --cream2:#FFEDE6; --pink:#FCE2DC;
+    --ink:#2C2227; --ink-soft:#7A6B70; --line:#F0DAD3; --white:#fff;
+    --shadow:0 8px 24px rgba(158,38,56,.10);
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:'Be Vietnam Pro',-apple-system,'Segoe UI',Roboto,sans-serif;
+    color:var(--ink); line-height:1.55; background:#EAD9D2;
+    background:linear-gradient(180deg,#F3E2DC 0%, #EAD9D2 100%);
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{ max-width:480px; margin:0 auto; background:var(--cream); min-height:100vh;
+         box-shadow:0 0 50px rgba(110,27,41,.12); overflow:hidden; padding-bottom:84px; }
+  a{ color:inherit; text-decoration:none; }
+  .sec{ padding:30px 22px; }
+  .eyebrow{ font-size:11px; letter-spacing:.22em; font-weight:800; color:var(--berry); text-transform:uppercase; }
+  .h2{ font-size:24px; font-weight:900; color:var(--berry-deep); letter-spacing:-.01em; margin-top:7px; line-height:1.15; }
+  .h2 .dot{ color:var(--leaf); }
+  .lead{ font-size:15px; color:#4A3D42; margin-top:14px; line-height:1.68; }
+  b,strong{ font-weight:800; }
+
+  /* ---------- LANG TOGGLE ---------- */
+  .langtoggle{ position:absolute; top:16px; right:16px; z-index:3; background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.4); color:#fff; font-size:12px; font-weight:800; letter-spacing:.03em;
+    padding:6px 13px; border-radius:20px; transition:transform .06s ease; }
+  .langtoggle:active{ transform:scale(.95); }
+
+  /* ---------- HERO ---------- */
+  .hero{ position:relative; padding:26px 22px 30px;
+    background:radial-gradient(120% 80% at 80% 0%, #C32C45 0%, var(--berry-dark) 45%, var(--berry-deep) 100%);
+    color:#fff; overflow:hidden; }
+  .hero .glow{ position:absolute; width:280px; height:280px; border-radius:50%; right:-110px; top:-70px;
+    background:radial-gradient(circle,#F0586E 0%, rgba(240,88,110,0) 70%); }
+  .brand{ display:flex; align-items:center; gap:11px; position:relative; }
+  .brand .badge{ width:46px; height:46px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 16px rgba(0,0,0,.18); flex:0 0 auto; overflow:hidden; }
+  .logo-chip{ background:#fff; border-radius:13px; padding:7px 11px; display:inline-flex; align-items:center; justify-content:center; box-shadow:0 6px 16px rgba(0,0,0,.18); flex:0 0 auto; }
+  .logo-chip img{ display:block; width:auto; }
+  .brand .logo-chip img{ height:50px; }
+  .flag .logo-chip img{ height:58px; }
+  .brand .bname{ font-weight:900; font-size:15px; letter-spacing:.02em; line-height:1.1; }
+  .brand .bsub{ font-size:12px; color:#FBD0C8; font-weight:600; margin-top:2px; }
+  .hero .eyebrow{ color:#FBC4BB; margin-top:26px; position:relative; }
+  .hero h1{ font-size:38px; line-height:1.03; font-weight:900; letter-spacing:-.02em; margin-top:8px; position:relative; }
+  .hero .role{ margin-top:12px; font-size:15px; font-weight:700; color:#FFE0DA; position:relative; }
+  .hero .role b{ color:#fff; }
+  .hero .tag{ margin-top:14px; font-size:14.5px; color:#FCE7E2; line-height:1.65; position:relative; }
+  .hero .tag b{ color:#fff; }
+  .statrow{ display:flex; gap:9px; margin-top:22px; position:relative; }
+  .statrow .s{ flex:1; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.22); border-radius:14px; padding:13px 6px; text-align:center; }
+  .statrow .s .n{ font-size:21px; font-weight:900; line-height:1; }
+  .statrow .s .n.g{ color:#9FE6BC; }
+  .statrow .s .l{ font-size:10px; font-weight:700; color:#FAD9D2; margin-top:6px; letter-spacing:.03em; text-transform:uppercase; }
+  .cta2{ display:flex; gap:10px; margin-top:20px; position:relative; }
+  .btn{ display:flex; align-items:center; justify-content:center; gap:7px; padding:14px 12px; border-radius:13px; font-weight:800; font-size:14.5px; flex:1; transition:transform .06s ease; }
+  .btn:active{ transform:scale(.97); }
+  .btn-white{ background:#fff; color:var(--berry-deep); }
+  .btn-ghost{ background:transparent; border:1.6px solid rgba(255,255,255,.55); color:#fff; }
+  .ic{ width:17px; height:17px; flex:0 0 auto; }
+
+  /* ---------- ABOUT ---------- */
+  .pos{ margin-top:18px; display:flex; flex-direction:column; gap:13px; }
+  .card{ background:#fff; border:1.5px solid var(--line); border-radius:16px; padding:18px; box-shadow:var(--shadow); }
+  .pos .icon{ width:38px; height:38px; border-radius:11px; display:flex; align-items:center; justify-content:center; margin-bottom:11px; }
+  .pos h3{ font-size:16.5px; font-weight:900; color:var(--berry-deep); }
+  .pos p{ font-size:13.5px; color:#574A4F; margin-top:6px; line-height:1.55; }
+  .goal{ margin-top:16px; background:var(--cream2); border-left:4px solid var(--berry); border-radius:0 12px 12px 0; padding:14px 16px; font-size:13.5px; color:#574A4F; line-height:1.62; }
+  .goal .gl{ display:block; font-size:11px; font-weight:900; letter-spacing:.05em; text-transform:uppercase; color:var(--berry); margin-bottom:6px; }
+  .goal b{ color:var(--berry-dark); }
+
+  /* ---------- SKILLS ---------- */
+  .skill{ background:#fff; border:1.5px solid var(--line); border-radius:14px; padding:15px 16px; margin-top:12px; }
+  .skill .top{ display:flex; justify-content:space-between; align-items:center; gap:10px; }
+  .skill .nm{ font-size:15.5px; font-weight:900; color:var(--ink); }
+  .skill .lvl{ font-size:11px; font-weight:800; padding:4px 10px; border-radius:20px; white-space:nowrap; flex:0 0 auto; }
+  .lv-pro{ background:#E5F6EC; color:var(--leaf-dark); }
+  .lv-good{ background:#FFF0D9; color:#B5791A; }
+  .lv-dev{ background:var(--pink); color:var(--berry-dark); }
+  .skill p{ font-size:13px; color:#6A5C61; margin-top:7px; line-height:1.5; }
+  .bar{ height:6px; border-radius:6px; background:#F1E4DF; margin-top:11px; overflow:hidden; }
+  .bar > i{ display:block; height:100%; border-radius:6px; }
+
+  /* ---------- FLAGSHIP ---------- */
+  .flag{ background:linear-gradient(135deg,var(--berry) 0%, var(--berry-dark) 55%, var(--berry-deep) 100%);
+    border-radius:20px; padding:22px; color:#fff; box-shadow:var(--shadow); position:relative; overflow:hidden; }
+  .flag .ring{ position:absolute; border:2px solid rgba(255,255,255,.13); border-radius:50%; width:160px; height:160px; right:-50px; top:-60px; }
+  .flag .top{ display:flex; align-items:center; gap:13px; position:relative; }
+  .flag .logo{ width:54px; height:54px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; flex:0 0 auto; box-shadow:0 6px 16px rgba(0,0,0,.2); overflow:hidden; }
+  .flag .top h3{ font-size:19px; font-weight:900; }
+  .flag .top .hd{ font-size:12.5px; color:#FBD0C8; font-weight:600; margin-top:3px; }
+  .flag .fstats{ display:flex; gap:8px; margin-top:18px; position:relative; }
+  .flag .fstats .f{ flex:1; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2); border-radius:12px; padding:11px 4px; text-align:center; }
+  .flag .fstats .f .n{ font-size:16px; font-weight:900; line-height:1; }
+  .flag .fstats .f .l{ font-size:9px; font-weight:700; color:#FAD9D2; margin-top:5px; text-transform:uppercase; letter-spacing:.03em; }
+  .flag p{ font-size:13.5px; color:#FFE7E1; line-height:1.62; margin-top:16px; position:relative; }
+  .tags{ display:flex; flex-wrap:wrap; gap:7px; margin-top:16px; position:relative; }
+  .tags span{ font-size:12px; font-weight:700; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.25); padding:6px 11px; border-radius:9px; }
+  .btn-dark{ background:#1f1f24; color:#fff; margin-top:18px; position:relative; }
+
+  /* ---------- VIDEOS ---------- */
+  .vcard{ background:#fff; border:1.5px solid var(--line); border-radius:16px; padding:14px; margin-top:14px; box-shadow:var(--shadow); }
+  .vtop{ display:flex; gap:13px; }
+  .thumb{ position:relative; flex:0 0 34%; border-radius:12px; overflow:hidden; }
+  .thumb .ph{ position:relative; width:100%; padding-bottom:177%; }
+  .thumb .inner{ position:absolute; inset:0; padding:9px; }
+  .thumb .cc{ position:absolute; top:7px; left:7px; background:rgba(0,0,0,.42); color:#fff; font-size:8.5px; font-weight:700; padding:2px 6px; border-radius:5px; }
+  .thumb .play{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:34px; height:34px; border-radius:50%; background:rgba(255,255,255,.92); display:flex; align-items:center; justify-content:center; }
+  .vinfo{ flex:1; min-width:0; }
+  .vinfo .vt{ font-size:15.5px; font-weight:900; color:var(--berry-deep); line-height:1.2; }
+  .vinfo .vd{ font-size:11.5px; color:var(--ink-soft); font-weight:600; margin-top:4px; }
+  .vinfo .vp{ font-size:13px; color:#574A4F; margin-top:9px; line-height:1.5; }
+  .vstats{ display:flex; flex-wrap:wrap; gap:7px; margin-top:13px; }
+  .vstats .st{ font-size:11.5px; font-weight:800; color:var(--ink); background:var(--cream2); border:1px solid var(--line); padding:5px 9px; border-radius:9px; }
+  .vstats .st b{ color:var(--berry); }
+  .vstats .st.g b{ color:var(--leaf-dark); }
+  .btn-tt{ background:#111118; color:#fff; margin-top:13px; }
+
+  /* ---------- EMBEDDED VIDEO (facade) ---------- */
+  .vembed{ position:relative; margin:0 auto; border-radius:14px; overflow:hidden; cursor:pointer; background:#160d10; }
+  .vembed.r916{ aspect-ratio:9 / 16; max-width:264px; }
+  .vembed.r169{ aspect-ratio:16 / 9; max-width:100%; }
+  .vembed img{ display:block; width:100%; height:100%; object-fit:cover; }
+  .vembed iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .vembed .playbtn{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+    width:54px; height:54px; border-radius:50%; background:rgba(255,255,255,.94);
+    display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(0,0,0,.32); z-index:2; }
+  .vembed .playbtn svg{ margin-left:3px; }
+  .vembed .cc2{ position:absolute; top:9px; left:9px; z-index:2; color:#fff; font-size:9.5px; font-weight:800;
+    padding:3px 8px; border-radius:6px; background:rgba(0,0,0,.5); letter-spacing:.03em; }
+  .vembed .cc2.ai{ background:var(--gold); color:#3A2410; }
+  .vcard .vmeta2{ margin-top:14px; }
+  .vcard .vmeta2 .vt{ font-size:16.5px; font-weight:900; color:var(--berry-deep); }
+  .vcard .vmeta2 .vd{ font-size:12px; color:var(--ink-soft); font-weight:600; margin-top:3px; }
+  .vcard .vp{ font-size:13.5px; color:#574A4F; line-height:1.55; margin-top:9px; }
+  .tiktok-link{ display:inline-flex; align-items:center; gap:6px; margin-top:12px; font-size:13px; font-weight:800; color:var(--berry-dark); }
+
+  /* ---------- SHOWCASE ---------- */
+  .feature{ border:2px solid var(--berry) !important; box-shadow:0 10px 28px rgba(226,58,82,.18) !important; }
+  .feature-tag{ display:inline-flex; align-items:center; gap:6px; background:var(--berry); color:#fff; font-size:10.5px; font-weight:900; letter-spacing:.05em; text-transform:uppercase; padding:5px 11px; border-radius:20px; margin-bottom:12px; }
+  .combo{ display:flex; flex-wrap:wrap; gap:7px; margin-top:13px; }
+  .combo span{ font-size:11.5px; font-weight:800; background:var(--cream2); border:1px solid var(--line); color:var(--berry-dark); padding:5px 10px; border-radius:9px; }
+
+  /* ---------- AI GALLERY ---------- */
+  .ai-gallery{ display:flex; flex-direction:column; gap:20px; margin-top:20px; }
+  .ai-item .at{ font-size:15px; font-weight:900; color:var(--berry-deep); margin-top:11px; text-align:center; }
+  .ai-item .ad{ font-size:12.5px; color:#6A5C61; margin-top:4px; line-height:1.5; text-align:center; }
+
+  /* ---------- HORIZONTAL SCROLL ROW ---------- */
+  .hrow{ display:flex; align-items:flex-start; gap:14px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+    padding:6px 4px 16px; margin:14px -4px 0; scrollbar-width:thin; scrollbar-color:var(--berry) var(--line); }
+  .hrow::-webkit-scrollbar{ height:7px; }
+  .hrow::-webkit-scrollbar-track{ background:var(--line); border-radius:10px; }
+  .hrow::-webkit-scrollbar-thumb{ background:var(--berry); border-radius:10px; }
+  .hrow > *{ scroll-snap-align:start; flex:0 0 86%; max-width:300px; margin-top:0 !important; }
+  .hrow.ai-gallery{ flex-direction:row; gap:14px; }
+  .hrow.ai-gallery > .ai-item{ flex:0 0 80%; }
+  .hrow.ai-gallery > .ai-col{ flex:0 0 80%; max-width:300px; display:flex; flex-direction:column; gap:20px; }
+  .hrow > .ba-arrow{ flex:0 0 auto; max-width:none; align-self:center; scroll-snap-align:none; display:flex; align-items:center; justify-content:center; }
+  .ba-circle{ width:44px; height:44px; border-radius:50%; background:var(--berry); color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 18px rgba(226,58,82,.32); transition:transform .1s ease; }
+  .ba-arrow:active .ba-circle{ transform:scale(.9); }
+  .scrollhint{ display:flex; align-items:center; gap:6px; margin-top:9px; font-size:12px; font-weight:700; color:var(--berry); }
+  .scrollhint svg{ animation:nudge 1.4s ease-in-out infinite; }
+  @keyframes nudge{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(4px); } }
+
+  /* ---------- STORY (before/after) ---------- */
+  .phase-badge{ display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:900; letter-spacing:.04em;
+    text-transform:uppercase; padding:5px 12px; border-radius:20px; }
+  .phase-badge.before{ background:#FBE3DE; color:#9E2638; }
+  .phase-badge.after{ background:#E5F6EC; color:var(--leaf-dark); }
+  .think{ margin-top:13px; background:var(--cream2); border:1px solid var(--line); border-radius:12px; padding:13px 15px;
+    font-size:12.5px; line-height:1.58; color:#574A4F; }
+  .think .lab{ display:block; font-size:10.5px; font-weight:900; letter-spacing:.05em; text-transform:uppercase; color:var(--berry); margin-bottom:5px; }
+  .think b{ color:var(--berry-dark); }
+  .flow-arrow{ display:flex; justify-content:center; align-items:center; gap:7px; margin:14px 0; color:var(--berry); font-size:12px; font-weight:800; }
+  .takeaway{ margin-top:18px; background:linear-gradient(135deg,var(--berry) 0%, var(--berry-deep) 100%); color:#fff;
+    border-radius:16px; padding:18px 20px; box-shadow:var(--shadow); }
+  .takeaway .tlab{ font-size:11px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; color:#FBC4BB; }
+  .takeaway p{ font-size:13.5px; line-height:1.62; margin-top:8px; }
+  .takeaway b{ color:#FBE38A; }
+
+  /* ---------- WORKFLOW ---------- */
+  .statusbar{ display:inline-flex; align-items:center; gap:9px; background:#E5F6EC; color:var(--leaf-dark); font-weight:900; font-size:13.5px; padding:10px 16px; border-radius:30px; margin-top:14px; }
+  .statusbar .dot2{ width:9px; height:9px; border-radius:50%; background:var(--leaf); box-shadow:0 0 0 4px rgba(46,158,91,.18); flex:0 0 auto; }
+  .flow{ margin-top:18px; display:flex; flex-direction:column; gap:11px; }
+  .flow .step{ display:flex; gap:14px; background:#fff; border:1.5px solid var(--line); border-radius:14px; padding:15px 16px; box-shadow:var(--shadow); }
+  .flow .num{ flex:0 0 auto; width:30px; height:30px; border-radius:50%; background:var(--berry); color:#fff; font-weight:900; font-size:14px; display:flex; align-items:center; justify-content:center; }
+  .flow h4{ font-size:14.5px; font-weight:900; color:var(--berry-deep); }
+  .flow .step p{ font-size:12.5px; color:#6A5C61; margin-top:4px; line-height:1.5; }
+  .wmeta{ margin-top:14px; background:var(--cream2); border:1px solid var(--line); border-radius:14px; padding:4px 16px; }
+  .wmeta .wrow{ display:flex; gap:10px; padding:11px 0; font-size:13px; color:#574A4F; border-bottom:1px solid var(--line); }
+  .wmeta .wrow:last-child{ border-bottom:0; }
+  .wmeta .wk{ flex:0 0 40%; font-weight:800; color:var(--berry-dark); }
+  .wmeta .wv{ flex:1; }
+
+  /* ---------- AI + SERVICES ---------- */
+  .ai{ background:linear-gradient(125deg,#2B2230 0%, #43243A 100%); border-radius:20px; padding:22px; color:#fff; box-shadow:var(--shadow); position:relative; overflow:hidden; }
+  .ai .ring{ position:absolute; border:2px solid rgba(255,255,255,.1); border-radius:50%; width:150px; height:150px; right:-46px; top:-54px; }
+  .ai .pill{ display:inline-block; background:var(--gold); color:#3A2410; font-weight:900; font-size:11px; letter-spacing:.1em; padding:5px 11px; border-radius:20px; text-transform:uppercase; position:relative; }
+  .ai h3{ font-size:18.5px; font-weight:900; margin-top:13px; line-height:1.25; position:relative; }
+  .ai p{ font-size:13.5px; color:#EAD9E6; line-height:1.62; margin-top:11px; position:relative; }
+  .ai .slot{ margin-top:16px; display:flex; align-items:center; gap:12px; background:rgba(255,255,255,.08); border:1.4px dashed rgba(255,255,255,.32); border-radius:13px; padding:13px; position:relative; }
+  .ai .slot .bx{ width:42px; height:42px; border-radius:10px; border:1.4px dashed rgba(255,255,255,.4); display:flex; align-items:center; justify-content:center; font-size:10px; color:#D7C3D2; flex:0 0 auto; text-align:center; }
+  .ai .slot .t{ font-size:12.5px; color:#E7D6E3; line-height:1.45; }
+  .ai .slot .t b{ color:#fff; }
+  .svc{ display:flex; flex-direction:column; gap:10px; margin-top:16px; }
+  .svc .s{ background:#fff; border:1.5px solid var(--line); border-radius:13px; padding:14px 16px; font-size:14px; font-weight:800; color:var(--berry-dark); display:flex; align-items:center; gap:11px; }
+  .svc .s .d{ width:9px; height:9px; border-radius:50%; background:var(--leaf); flex:0 0 auto; }
+
+  /* ---------- CONTACT ---------- */
+  .contact{ background:linear-gradient(135deg,var(--berry) 0%, var(--berry-deep) 100%); color:#fff; padding:30px 22px 34px; }
+  .contact .eyebrow{ color:#FBC4BB; }
+  .contact h2{ font-size:23px; font-weight:900; margin-top:7px; }
+  .clist{ margin-top:18px; display:flex; flex-direction:column; gap:11px; }
+  .crow{ display:flex; align-items:center; gap:13px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); border-radius:13px; padding:13px 15px; }
+  .crow .ci{ width:38px; height:38px; border-radius:10px; background:rgba(255,255,255,.16); display:flex; align-items:center; justify-content:center; flex:0 0 auto; }
+  .crow .k{ font-size:10.5px; color:#FBD0C8; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+  .crow .v{ font-size:15px; font-weight:800; margin-top:1px; word-break:break-all; }
+
+  /* ---------- STICKY BAR ---------- */
+  .sticky{ position:fixed; left:0; right:0; bottom:0; z-index:50; }
+  .sticky .in{ max-width:480px; margin:0 auto; display:flex; gap:10px; padding:11px 14px calc(11px + env(safe-area-inset-bottom));
+    background:rgba(255,255,255,.92); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-top:1px solid var(--line);
+    box-shadow:0 -8px 24px rgba(110,27,41,.12); }
+  .sticky .b{ flex:1; display:flex; align-items:center; justify-content:center; gap:8px; padding:14px; border-radius:13px; font-weight:800; font-size:15px; }
+  .sticky .b.zalo{ background:var(--berry); color:#fff; }
+  .sticky .b.fb{ background:#1877F2; color:#fff; }
+  .sticky .b.tt{ background:#111118; color:#fff; }
+  .sticky .b{ font-size:14px; padding:13px 10px; }
+  .footnote{ text-align:center; font-size:11px; color:var(--ink-soft); padding:18px; }
+
+  /* ---------- DESKTOP ---------- */
+  @media (min-width:820px){
+    .wrap{ max-width:940px; padding-bottom:96px; }
+    .sec{ padding:42px 56px; }
+    .hero{ padding:40px 56px 46px; }
+    .contact{ padding:42px 56px 50px; }
+    .hero h1{ font-size:46px; }
+    .lead, .flag p, .ai p, .takeaway p, .think, .hero .tag{ max-width:680px; }
+    .pos{ flex-direction:row; }
+    .pos .card{ flex:1; }
+    .svc{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .flow{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .clist{ display:grid; grid-template-columns:1fr 1fr; }
+    .sec > .vcard{ max-width:560px; margin-left:auto; margin-right:auto; }
+    .sticky{ display:none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== HERO ===== -->
+  <header class="hero">
+    <span class="glow"></span>
+    <a class="langtoggle" href="index.html">Tiếng Việt</a>
+    <div class="eyebrow" style="margin-top:6px;">Portfolio</div>
+    <div class="role" style="margin-top:10px;">Video Editor — <b>available for freelance &amp; remote work</b></div>
+    <div style="margin-top:8px; font-size:13.5px; font-weight:600; color:#FCE7E2; position:relative;">📞 +84 935 897 490 · ✉ dtqh0935897490@gmail.com</div>
+    <div style="margin-top:14px; font-size:12px; font-weight:700; letter-spacing:.04em; color:#FBC4BB; position:relative;">Connect with me:</div>
+    <div class="cta2">
+      <a class="btn btn-white" href="https://zalo.me/0935897490" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M12 3C6.5 3 2 6.8 2 11.5c0 2.6 1.4 4.9 3.6 6.4-.1 1-.5 2.3-1.1 3.1-.2.3 0 .7.4.6 1.9-.4 3.3-1 4.2-1.6 .9.2 1.9.4 2.9.4 5.5 0 10-3.8 10-8.9S17.5 3 12 3Z" fill="#E23A52"/></svg>
+        Zalo
+      </a>
+      <a class="btn btn-ghost" href="https://www.facebook.com/aotranquochoang" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg>
+        Facebook
+      </a>
+      <a class="btn btn-ghost" href="https://www.tiktok.com/@vuonsaunha" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2.1 1.7 3.7 3.5 4v2.6c-1.3 0-2.5-.4-3.5-1v6.1c0 3.1-2.5 5.3-5.4 5.3-2.8 0-5.1-2.2-5.1-5 0-3 2.6-5.3 5.7-4.9v2.7c-.4-.1-.8-.2-1.2-.2-1.3 0-2.4 1.1-2.4 2.5s1.1 2.5 2.5 2.5c1.4 0 2.5-1.1 2.5-2.6V3h3.4Z"/></svg>
+        TikTok
+      </a>
+    </div>
+  </header>
+
+  <!-- ===== 01 · ABOUT ===== -->
+  <section class="sec">
+    <div class="eyebrow">01 — About me</div>
+    <h1 style="font-size:34px; line-height:1.05; font-weight:900; letter-spacing:-.02em; color:var(--berry-deep); margin-top:8px;">Đào Trần Quốc Hoàng</h1>
+    <div style="margin-top:10px; font-size:15px; font-weight:700; color:#4A3D42;">Video Editor — <b style="color:var(--berry-dark);">short-form content for TikTok / Reels / Shorts</b></div>
+    <div class="meta" style="margin-top:12px; font-size:13.5px; font-weight:700; color:var(--berry-dark); display:flex; flex-wrap:wrap; gap:6px 16px;">
+      <span>🎂 20 years old · Born 2006</span>
+      <span>📍 Gia Lai, Vietnam</span>
+    </div>
+    <p class="lead">I'm a short-form content editor who handles the full process myself: ideation, filming, editing, and selling the product right inside the video. My strength is turning dry information into videos that are <b>easy to watch, hold viewers to the last second, and drive sales</b>. I learn fast, take initiative, and <b>respond well to feedback</b> — I always start from the question "what is this video meant to achieve?" before getting into the details. Right now I'm focused on sharpening my scripting &amp; ideation to get better every day.</p>
+
+    <div class="goal">
+      <span class="gl">🎯 My goal</span>
+      To use my free time to <b>sharpen my craft and build real-world experience</b>, and to find <b>more projects so I can work alongside clients long term</b>. To me, every freelance project is a chance to learn, do real work, and do it seriously.
+    </div>
+
+    <div class="h2" style="font-size:18px; margin-top:26px;">Skills &amp; tools</div>
+    <div class="skill">
+      <div class="top"><span class="nm">CapCut (PC version)</span><span class="lvl lv-pro">Proficient</span></div>
+      <p>The desktop version of CapCut — cuts, animated text, transitions, and on-trend music. This is my main editing tool and I use it fluently.</p>
+    </div>
+    <div class="skill">
+      <div class="top"><span class="nm">AI video creation — Gemini Omni &amp; Claude Code × Remotion</span><span class="lvl lv-good">Exploring</span></div>
+      <p>I use <b>Gemini Omni</b> (on Google Flow) to create visual explainer videos in a Mark Rober style, and <b>Claude Code × Remotion</b> to build videos with code — woven into sales videos to make them easier to understand.</p>
+    </div>
+    <div class="skill">
+      <div class="top"><span class="nm">Scripting &amp; ideation</span><span class="lvl lv-dev">Developing</span></div>
+      <p>I'm honing hooks and retention structure — this is the area I'm actively learning more about every day.</p>
+    </div>
+
+    <div class="h2" style="font-size:18px; margin-top:24px;">What I offer</div>
+    <div class="svc">
+      <div class="s"><span class="d"></span>Short-form sales &amp; affiliate videos <span style="font-weight:600; color:var(--ink-soft);">— strongest in the agriculture niche</span></div>
+      <div class="s"><span class="d"></span>AI-powered Motion Graphics &amp; explainer animation <span style="font-weight:600; color:var(--ink-soft);">— woven into sales &amp; affiliate videos to explain things</span></div>
+    </div>
+  </section>
+
+  <!-- ===== 02 · FLAGSHIP PROJECT: VƯỜN SAU NHÀ ===== -->
+  <section class="sec" style="padding-top:4px;">
+    <div class="eyebrow">02 — Flagship project (mine)</div>
+    <div class="h2">The Vườn Sau Nhà channel<span class="dot">.</span></div>
+    <p class="lead" style="margin-top:9px; font-size:13.5px;">A channel I run 100% on my own — real proof that I can make short-form content that delivers numbers.</p>
+    <div style="height:6px;"></div>
+
+    <div class="flag">
+      <span class="ring"></span>
+      <div class="top">
+        <span class="logo-chip">
+          <img src="vuonsaunha-logo.png" alt="Vườn Sau Nhà logo">
+        </span>
+        <div>
+          <div class="hd" style="font-size:13.5px; color:#fff; font-weight:800;">My own TikTok channel</div>
+          <div class="hd">@vuonsaunha · linkbio.co/vuonsaunha</div>
+        </div>
+      </div>
+      <div class="fstats">
+        <div class="f"><div class="n">75K+</div><div class="l">Followers</div></div>
+        <div class="f"><div class="n">2M+</div><div class="l">Likes</div></div>
+        <div class="f"><div class="n">Strawberries</div><div class="l">Niche</div></div>
+      </div>
+      <p>A TikTok channel I run entirely myself: ideation, filming, editing, and selling the product. This is where I sharpened every skill of a short-form editor — from hooks, editing pace, and animated text to weaving the product in so it closes sales right inside the video.</p>
+      <a class="btn btn-dark" href="https://www.tiktok.com/@vuonsaunha" target="_blank" rel="noopener">View the full channel →</a>
+    </div>
+
+    <div class="h2" style="font-size:18px; margin-top:26px;">3 videos I'm proud of</div>
+    <p class="lead" style="margin-top:7px; font-size:13px;">Numbers taken straight from the channel. Tap to watch right here, or open the original on TikTok.</p>
+    <div class="scrollhint">Scroll sideways for more <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+    <div class="hrow">
+    <!-- VIDEO 1 -->
+    <div class="vcard">
+      <div class="vembed r916" onclick="playYT(this,'pGQ79BsDUlo')">
+        <span class="cc2">CapCut</span>
+        <img src="https://i.ytimg.com/vi/pGQ79BsDUlo/hqdefault.jpg" loading="lazy" alt="Apple watermelon &amp; Bell pepper" onerror="this.style.display='none'">
+        <span class="playbtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="#E23A52"><path d="M8 5v14l11-7z"/></svg></span>
+      </div>
+      <div class="vmeta2">
+        <div class="vt">Why you shouldn't pre-sprout seeds</div>
+        <div class="vd">Feb 17, 2024 · Apple watermelon &amp; Bell pepper</div>
+      </div>
+      <div class="vp">Built as a <b>day-by-day time-lapse</b> with big title text and concise knowledge. The <b>high save rate</b> = genuinely useful content.</div>
+      <div class="vstats">
+        <span class="st"><b>2,861</b> likes</span>
+        <span class="st g"><b>121</b> saves</span>
+        <span class="st"><b>37</b> comments</span>
+        <span class="st"><b>3</b> shares</span>
+      </div>
+      <a class="tiktok-link" href="https://www.tiktok.com/@vuonsaunha/video/7336497685370916098" target="_blank" rel="noopener">View original on TikTok ↗</a>
+    </div>
+
+    <!-- VIDEO 2 -->
+    <div class="vcard">
+      <div class="vembed r916" onclick="playYT(this,'jwa3BE6tYQE')">
+        <span class="cc2">CapCut</span>
+        <img src="https://i.ytimg.com/vi/jwa3BE6tYQE/hqdefault.jpg" loading="lazy" alt="The quest for sunflower seeds" onerror="this.style.display='none'">
+        <span class="playbtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="#E23A52"><path d="M8 5v14l11-7z"/></svg></span>
+      </div>
+      <div class="vmeta2">
+        <div class="vt">The quest for the seeds</div>
+        <div class="vd">Feb 23, 2024 · Sunflower seeds</div>
+      </div>
+      <div class="vp"><b>Storytelling</b> built around a journey, with animated text highlighting the voiceover. The <b>most viral</b> of the three.</div>
+      <div class="vstats">
+        <span class="st"><b>6,422</b> likes</span>
+        <span class="st g"><b>322</b> saves</span>
+        <span class="st"><b>59</b> comments</span>
+        <span class="st"><b>32</b> shares</span>
+      </div>
+      <a class="tiktok-link" href="https://www.tiktok.com/@vuonsaunha/video/7338630003384536338" target="_blank" rel="noopener">View original on TikTok ↗</a>
+    </div>
+
+    <!-- VIDEO 3 -->
+    <div class="vcard">
+      <div class="vembed r916" onclick="playYT(this,'9D9RqSzBJ5g')">
+        <span class="cc2">CapCut</span>
+        <img src="https://i.ytimg.com/vi/9D9RqSzBJ5g/hqdefault.jpg" loading="lazy" alt="A sales story" onerror="this.style.display='none'">
+        <span class="playbtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="#E23A52"><path d="M8 5v14l11-7z"/></svg></span>
+      </div>
+      <div class="vmeta2">
+        <div class="vt">A sales story</div>
+        <div class="vd">Apr 3, 2024 · Strawberry seeds</div>
+      </div>
+      <div class="vp"><b>Told through a text-message chat</b>, with the product woven in naturally and a "part 2" cliffhanger to build curiosity. A textbook <b>sales video</b>.</div>
+      <div class="vstats">
+        <span class="st"><b>2,180</b> likes</span>
+        <span class="st g"><b>78</b> saves</span>
+        <span class="st"><b>40</b> comments</span>
+        <span class="st"><b>16</b> shares</span>
+      </div>
+      <a class="tiktok-link" href="https://www.tiktok.com/@vuonsaunha/video/7353605696048450833" target="_blank" rel="noopener">View original on TikTok ↗</a>
+    </div>
+    </div>
+
+    <a class="btn btn-dark" href="https://www.tiktok.com/@vuonsaunha" target="_blank" rel="noopener" style="display:flex; margin-top:4px;">See the channel overview on TikTok →</a>
+  </section>
+
+  <!-- ===== 03 · WORKING TO BRIEF & TAKING FEEDBACK ===== -->
+  <section class="sec" style="padding-top:4px;">
+    <div class="eyebrow">03 — Working to brief &amp; taking feedback</div>
+    <div class="h2">Learning from feedback<span class="dot">.</span></div>
+    <p class="lead" style="margin-top:9px; font-size:13.5px;">This is a <b>project I did for Nhi Lê's team</b> (not part of my own channel) — a real example of how I work with clients: taking feedback on board and shifting my mindset, from simply following the brief to staying true to the goal.</p>
+
+    <div class="hrow">
+    <!-- BEFORE -->
+    <div class="vcard">
+      <div style="margin-bottom:13px;"><span class="phase-badge before">● Before · not usable</span></div>
+      <div class="vembed r169" onclick="playYT(this,'IUI8paV2LgM')">
+        <span class="cc2">Draft</span>
+        <img src="https://i.ytimg.com/vi/IUI8paV2LgM/hqdefault.jpg" loading="lazy" alt="Birthday video - first cut" onerror="this.style.display='none'">
+        <span class="playbtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="#E23A52"><path d="M8 5v14l11-7z"/></svg></span>
+      </div>
+      <div class="vmeta2">
+        <div class="vt">Birthday wishes — first cut</div>
+        <div class="vd">Off target · leaned toward "showing off"</div>
+      </div>
+      <div class="vp">The goal was to <b>wish someone a happy birthday</b>, but the video felt more like a showreel than a heartfelt message — so it wasn't usable.</div>
+      <div class="think"><span class="lab">My mindset back then</span>I just made exactly what the brief said, without asking <b>what this video was actually meant to achieve</b>.</div>
+    </div>
+
+    <div class="ba-arrow" style="cursor: pointer;" onclick="scrollNext(this)">
+      <span class="ba-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+
+    <!-- AFTER -->
+    <div class="vcard">
+      <div style="margin-bottom:13px;"><span class="phase-badge after">● After · on target</span></div>
+      <div class="vembed r169" onclick="playYT(this,'nPbsWZTVILA')">
+        <span class="cc2">Final cut</span>
+        <img src="https://i.ytimg.com/vi/nPbsWZTVILA/hqdefault.jpg" loading="lazy" alt="A surprise gift for Nhi" onerror="this.style.display='none'">
+        <span class="playbtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="#E23A52"><path d="M8 5v14l11-7z"/></svg></span>
+      </div>
+      <div class="vmeta2">
+        <div class="vt">A surprise gift for Nhi</div>
+        <div class="vd">On target · a warm birthday message</div>
+      </div>
+      <div class="vp">After taking the feedback, I reworked it to <b>hit the goal</b>: a genuine birthday wish instead of a showreel.</div>
+      <div class="think"><span class="lab">My mindset now</span>First ask <b>what the video's goal is</b>, think about the <b>big picture</b> (the overall message), then move to the <b>small picture</b> (shots, text, editing pace).</div>
+      <a class="tiktok-link" href="https://youtu.be/mc_UvAB4r-I" target="_blank" rel="noopener">Watch on Nhi Lê's YouTube channel ↗</a>
+    </div>
+    </div>
+
+    <div class="takeaway">
+      <div class="tlab">What I took away</div>
+      <p>A great editor doesn't just follow the brief — they understand the <b>real goal</b> behind it. I learn fast, listen to feedback, and adjust my thinking so every video serves exactly what the client needs.</p>
+    </div>
+  </section>
+
+  <!-- ===== 04 · AI IN MY WORKFLOW ===== -->
+  <section class="sec" style="padding-top:4px;">
+    <div class="eyebrow">04 — AI in my workflow</div>
+    <div class="h2">Building videos with AI<span class="dot">.</span></div>
+
+    <p class="lead" style="margin-top:9px; font-size:13.5px;">I use AI to build visual explainer videos (Mark Rober style) — illustrating growing techniques and weaving them into sales videos to make them easy to understand. Tap any video to watch.</p>
+
+    <div class="scrollhint">Scroll sideways for more <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+    <div class="ai-gallery hrow">
+      <!-- NHI LÊ TEAM COLUMN: Rule 3 (top) + Website intro (bottom) -->
+      <div class="ai-col">
+        <div class="ai-item">
+          <div class="vembed r169" onclick="playYT(this,'QuVmM3DkRcg')">
+            <span class="cc2 ai">98% AI</span>
+            <img src="https://i.ytimg.com/vi/QuVmM3DkRcg/hqdefault.jpg" loading="lazy" alt="Rule 3 AI video" onerror="this.style.display='none'">
+            <span class="playbtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="#E23A52"><path d="M8 5v14l11-7z"/></svg></span>
+          </div>
+          <div class="at">Rule 3 — a video built with AI</div>
+          <div class="ad">Created <b>98% with AI</b>, with only 2% post-production (adding text to make the video clearer). <b>Made with Gemini Omni on Google Flow</b> — a project for Nhi Lê's team.</div>
+          <div style="text-align:center;"><a class="tiktok-link" href="https://youtu.be/QuVmM3DkRcg" target="_blank" rel="noopener">Open on YouTube ↗</a></div>
+        </div>
+
+        <div class="ai-item">
+          <div class="vembed r169" onclick="playYT(this,'Q_AGGmZ6Ypo')">
+            <span class="cc2 ai">AI</span>
+            <img src="https://i.ytimg.com/vi/Q_AGGmZ6Ypo/hqdefault.jpg" loading="lazy" alt="Intro for the 30-Day Challenge website" onerror="this.style.display='none'">
+            <span class="playbtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="#E23A52"><path d="M8 5v14l11-7z"/></svg></span>
+          </div>
+          <div class="at">Intro for the "30-Day Challenge with Nhi Lê" website</div>
+          <div class="ad">A short, eye-catching intro video for a product / program. <b>Made with Claude Code × Remotion</b> — a project for Nhi Lê's team.</div>
+          <div style="text-align:center;"><a class="tiktok-link" href="https://youtu.be/Q_AGGmZ6Ypo" target="_blank" rel="noopener">Open on YouTube ↗</a></div>
+        </div>
+      </div>
+
+      <div class="ai-item">
+        <div class="vembed r916" onclick="playYT(this,'tfGVtiF2tmY')">
+          <span class="cc2 ai">AI</span>
+          <img src="https://i.ytimg.com/vi/tfGVtiF2tmY/hqdefault.jpg" loading="lazy" alt="The journey of a tissue-cultured strawberry plant" onerror="this.style.display='none'">
+          <span class="playbtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="#E23A52"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <div class="at">The journey of a tissue-cultured strawberry plant</div>
+        <div class="ad">The growth process of a tissue-cultured strawberry plant, illustrated step by step. <b>Made with Gemini Omni on Google Flow.</b></div>
+        <div style="text-align:center;"><a class="tiktok-link" href="https://youtu.be/tfGVtiF2tmY" target="_blank" rel="noopener">Open on YouTube ↗</a></div>
+      </div>
+
+      <div class="ai-item">
+        <div class="vembed r916" onclick="playYT(this,'p3yztNabv6M')">
+          <span class="cc2 ai">AI</span>
+          <img src="https://i.ytimg.com/vi/p3yztNabv6M/hqdefault.jpg" loading="lazy" alt="Why choose tissue-cultured strawberry plants" onerror="this.style.display='none'">
+          <span class="playbtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="#E23A52"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <div class="at">Why you should choose tissue-cultured strawberry plants</div>
+        <div class="ad">A visual explanation of why tissue-cultured strawberry plants are the better choice. <b>Made with Gemini Omni on Google Flow.</b></div>
+        <div style="text-align:center;"><a class="tiktok-link" href="https://youtu.be/p3yztNabv6M" target="_blank" rel="noopener">Open on YouTube ↗</a></div>
+      </div>
+
+      <div class="ai-item">
+        <div class="vembed r916" onclick="playYT(this,'NMob0LN6Sl4')">
+          <span class="cc2 ai">AI</span>
+          <img src="https://i.ytimg.com/vi/NMob0LN6Sl4/hqdefault.jpg" loading="lazy" alt="Three-colored mushrooms with insects above ground" onerror="this.style.display='none'">
+          <span class="playbtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="#E23A52"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <div class="at">Three-colored mushrooms with insects above ground</div>
+        <div class="ad">Illustrating the ecosystem of mushrooms &amp; insects above ground. <b>Made with Gemini Omni on Google Flow.</b></div>
+        <div style="text-align:center;"><a class="tiktok-link" href="https://youtu.be/NMob0LN6Sl4" target="_blank" rel="noopener">Open on YouTube ↗</a></div>
+      </div>
+
+      <div class="ai-item">
+        <div class="vembed r916" onclick="playYT(this,'D6uskfNaEyg')">
+          <span class="cc2 ai">AI</span>
+          <img src="https://i.ytimg.com/vi/D6uskfNaEyg/hqdefault.jpg" loading="lazy" alt="Three-colored mushrooms with insects below ground" onerror="this.style.display='none'">
+          <span class="playbtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="#E23A52"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <div class="at">Three-colored mushrooms with insects below ground</div>
+        <div class="ad">Illustrating the ecosystem of mushrooms &amp; insects below ground. <b>Made with Gemini Omni on Google Flow.</b></div>
+        <div style="text-align:center;"><a class="tiktok-link" href="https://youtu.be/D6uskfNaEyg" target="_blank" rel="noopener">Open on YouTube ↗</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 05 · WORKFLOW & TAKING ON PROJECTS ===== -->
+  <section class="sec" style="padding-top:4px;">
+    <div class="eyebrow">05 — Workflow &amp; taking on work (freelance / remote)</div>
+    <div class="h2">How I work freelance &amp; remote<span class="dot">.</span></div>
+    <div class="statusbar"><span class="dot2"></span>Available for freelance &amp; remote</div>
+
+    <div class="flow">
+      <div class="step">
+        <div class="num">1</div>
+        <div><h4>Receive the brief &amp; raw files</h4><p>We discuss the goal, audience &amp; style of the video. I receive footage via Google Drive — convenient, with no size limits.</p></div>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <div><h4>Set the direction &amp; build a first cut</h4><p>I lock in the goal first (big picture), then move to the details (shots, text, pace). I send a draft early so you can review.</p></div>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <div><h4>Take feedback &amp; revise</h4><p>I revise based on your notes until it's right. I take feedback quickly and never mind redoing things to get the best result.</p></div>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <div><h4>Deliver</h4><p>I export to each platform's spec (TikTok / Reels / Shorts / YouTube), with the source file included when needed.</p></div>
+      </div>
+    </div>
+
+    <div class="wmeta">
+      <div class="wrow"><div class="wk">Format</div><div class="wv">Freelance &amp; remote · 100% online</div></div>
+      <div class="wrow"><div class="wk">Working hours</div><div class="wv">Mornings <b>6 AM–1 PM</b> (GMT+7) — fast replies during these hours</div></div>
+      <div class="wrow"><div class="wk">File delivery</div><div class="wv">Google Drive</div></div>
+      <div class="wrow"><div class="wk">Communication &amp; feedback</div><div class="wv">Zalo · Facebook · Email</div></div>
+      <div class="wrow"><div class="wk">Turnaround</div><div class="wv">Flexible, based on length &amp; requirements — confirmed when I receive the brief</div></div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact">
+    <div class="eyebrow">Get in touch</div>
+    <h2>Đào Trần Quốc Hoàng</h2>
+    <div class="clist">
+      <a class="crow" href="https://zalo.me/0935897490" target="_blank" rel="noopener">
+        <span class="ci"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.8 2 11.5c0 2.6 1.4 4.9 3.6 6.4-.1 1-.5 2.3-1.1 3.1-.2.3 0 .7.4.6 1.9-.4 3.3-1 4.2-1.6 .9.2 1.9.4 2.9.4 5.5 0 10-3.8 10-8.9S17.5 3 12 3Z" fill="#fff"/></svg></span>
+        <div><div class="k">Zalo / Phone</div><div class="v">+84 935 897 490</div></div>
+      </a>
+      <a class="crow" href="https://www.facebook.com/aotranquochoang" target="_blank" rel="noopener">
+        <span class="ci"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z" fill="#fff"/></svg></span>
+        <div><div class="k">Facebook</div><div class="v">facebook.com/aotranquochoang</div></div>
+      </a>
+      <a class="crow" href="mailto:dtqh0935897490@gmail.com">
+        <span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="#fff"/><path d="M4 7l8 6 8-6" stroke="#E23A52" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+        <div><div class="k">Email</div><div class="v">dtqh0935897490@gmail.com</div></div>
+      </a>
+      <a class="crow" href="https://www.tiktok.com/@vuonsaunha" target="_blank" rel="noopener">
+        <span class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M16.5 3c.3 2.1 1.7 3.7 3.5 4v2.6c-1.3 0-2.5-.4-3.5-1v6.1c0 3.1-2.5 5.3-5.4 5.3-2.8 0-5.1-2.2-5.1-5 0-3 2.6-5.3 5.7-4.9v2.7c-.4-.1-.8-.2-1.2-.2-1.3 0-2.4 1.1-2.4 2.5s1.1 2.5 2.5 2.5c1.4 0 2.5-1.1 2.5-2.6V3h3.4Z"/></svg></span>
+        <div><div class="k">TikTok</div><div class="v">tiktok.com/@vuonsaunha</div></div>
+      </a>
+    </div>
+  </section>
+
+  <div class="footnote">© 2026 · Đào Trần Quốc Hoàng — Video Editor · Vườn Sau Nhà</div>
+</div>
+
+<!-- ===== STICKY BAR ===== -->
+<div class="sticky">
+  <div class="in">
+    <a class="b zalo" href="https://zalo.me/0935897490" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.8 2 11.5c0 2.6 1.4 4.9 3.6 6.4-.1 1-.5 2.3-1.1 3.1-.2.3 0 .7.4.6 1.9-.4 3.3-1 4.2-1.6 .9.2 1.9.4 2.9.4 5.5 0 10-3.8 10-8.9S17.5 3 12 3Z" fill="#fff"/></svg>
+      Zalo
+    </a>
+    <a class="b fb" href="https://www.facebook.com/aotranquochoang" target="_blank" rel="noopener">
+      <svg width="17" height="17" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z" fill="#fff"/></svg>
+      Facebook
+    </a>
+    <a class="b tt" href="https://www.tiktok.com/@vuonsaunha" target="_blank" rel="noopener">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="#fff"><path d="M16.5 3c.3 2.1 1.7 3.7 3.5 4v2.6c-1.3 0-2.5-.4-3.5-1v6.1c0 3.1-2.5 5.3-5.4 5.3-2.8 0-5.1-2.2-5.1-5 0-3 2.6-5.3 5.7-4.9v2.7c-.4-.1-.8-.2-1.2-.2-1.3 0-2.4 1.1-2.4 2.5s1.1 2.5 2.5 2.5c1.4 0 2.5-1.1 2.5-2.6V3h3.4Z"/></svg>
+      TikTok
+    </a>
+  </div>
+</div>
+
+<script>
+  function playYT(el, id){
+    if(el.dataset.done) return;
+    el.dataset.done = '1';
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1';
+    f.allow = 'autoplay; encrypted-media; fullscreen; picture-in-picture';
+    f.setAttribute('allowfullscreen','');
+    el.innerHTML = '';
+    el.appendChild(f);
+  }
+  function scrollNext(btn) {
+    const row = btn.closest('.hrow');
+    if (row) {
+      const nextCard = btn.nextElementSibling;
+      if (nextCard) {
+        const rect = nextCard.getBoundingClientRect();
+        const rowRect = row.getBoundingClientRect();
+        row.scrollBy({
+          left: rect.left - rowRect.left,
+          behavior: 'smooth'
+        });
+      }
+    }
+  }
+</script>
+</body>
+</html>
